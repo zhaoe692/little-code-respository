@@ -1,0 +1,98 @@
+/* pages/collect/collect.wxss */
+/*旧书*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1vh 2vw;
+  margin: 0 auto;
+}
+
+.container-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(218, 216, 216);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.user-head {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.user-name-time {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-left: 10px;
+}
+
+.user-name {
+  padding-top: 0px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-publish-time {
+  padding-top: 0px;
+  font-weight: lighter;
+  font-size: 4vw;
+  margin-left: 23%;
+  color: #999;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+.content-scroll {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.content-text {
+  font-size: 16px;
+  color: #666;
+  margin-left: 5px;
+}
+
+.content-text2 {
+  font-size: 15px;
+  color: blue;
+  margin-left: 5px;
+}
+
+.content-img {
+  width: 25vw;
+  height: 15vh;
+  margin-left: 8px;
+  background-color: #999;
+}
+
+.content-menu {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  margin-left: 8px;
+}

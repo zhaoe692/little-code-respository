@@ -1,0 +1,81 @@
+@import  "../../style/weui.wxss";
+.tip {
+  width: 100%;
+  color: red;
+  font-size: 28rpx;
+  background-color: #e6e6e6;
+}
+.hr1 {
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.2;
+}
+.image-group {
+  display: flex;
+  white-space: nowrap;
+  margin-top: 10%;
+}
+
+.image-group view{
+  display: inline-block;
+  flex-direction: row;
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  background-color: #cfcccc;
+}
+
+.image-group view image{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.image-group view icon{
+  display: inline-block;
+  vertical-align: top;
+  position: absolute
+}
+.line {
+  height: 10px;
+}
+.field1{
+  height: 400px;
+  width: 100%;
+}
+
+text-area {
+  width: 100%;
+}
+
+.text-content {
+  background-color: white;
+  width: 100%;
+  height: 150px;
+}
+
+.add_btn{
+    width: 100%;
+    position: fixed;
+    bottom: 30rpx;
+}
+.btn{
+    margin-top: 30rpx;
+    width: 450rpx;
+    background: #14a1fd;
+    color: #fff;
+    border-radius: 70rpx;
+   
+}
+.hr {
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.2;
+  margin-bottom: 20%;
+}
+.weui-label2 {
+  width: 200rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}

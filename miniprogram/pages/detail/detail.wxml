@@ -1,0 +1,92 @@
+<view class='biaoti'>
+<view class='left'>
+<view>{{topic.content}}</view>
+</view>
+<view class='right'>
+<text>{{topic.date}}</text>
+<text style=' margin-left: 35%;'>浏览{{topic.index}}人</text>
+</view>
+</view>
+<view class='line'></view>
+<view class='contain'>图片详情
+<scroll-view class="image-group" scroll-x="true">
+  <block wx:for='{{topic.images}}' wx:for-index='idx'>
+    <view>
+      <image src='{{topic.images[idx]}}' mode='scaleToFill'></image>
+       <icon ></icon>
+    </view>
+  </block>
+</scroll-view>
+<!-- <image src='{{topic.images}}' style='width:100px;height:100px;'></image> -->
+</view>
+<!-- <text class='t1'>
+{{topic.des}}
+</text>
+ -->
+<view class='line1'></view>
+<view class='contain'>
+    <view class="contain-all">
+        <view class="contain-tet">详细描述</view>
+        <text class='contain-con'>{{topic.des}}</text>
+      </view>
+      <view class='line1'></view>
+    <view class="contain-all">
+        <view class="contain-tet">属性标签</view>
+      <view class="contain-con">
+          {{topic.menu}}
+      </view>
+    </view>
+    <view class='line1'></view>
+    <view class="contain-all">
+        <view class="contain-tet">物品成色</view>
+      <view class="contain-con">
+          {{topic.condition}}
+      </view>
+    </view>
+    <view class='line1'></view>
+    <view class="contain-all">
+        <view class="contain-tet">所属校区</view>
+      <view class="contain-con">
+          {{topic.campus}}
+      </view>
+    </view>
+</view>
+<view class='line'></view>
+<view class='contain'>
+    <view class="contain-all">
+        <view class="contain-tet">微信号</view>
+        <text class='contain-con'>{{topic.wxNumber}}</text>
+      </view>
+      <view class='line1'></view>
+    <view class="contain-all">
+        <view class="contain-tet">电话号</view>
+      <view class="contain-con">
+         {{topic.phoneNumber}}
+      </view>
+    </view>
+</view>
+
+ <view class="comment_fixed_footer">
+    <view class="footer_oper_box">
+      <button class="btn" >
+        <image src="/images/me/f064.png"></image>
+        <text>关于</text>
+      </button>
+ 
+      <view class="footer_c">
+        <view wx:if="{{collected.length>0}}">
+        <image catchtap='_onCollectTap' src="{{isCollected?'/images/me/like1.png':'/images/me/like2.png'}}"></image>
+        </view>
+        <view wx:elif="{{collected.length==0}}">
+        <image catchtap="onCollectTap" src="{{isCollected?'/images/me/like2.png':'/images/me/like1.png'}}"></image>
+         </view>
+        <text>收藏</text>
+      </view>
+    </view>
+ 
+      <view class="post_comment_button">
+        <image src="/images/me/advice.png"></image>
+        <text>评论</text>
+      </view>
+  </view>
+

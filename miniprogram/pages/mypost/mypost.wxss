@@ -1,0 +1,6 @@
+/* pages/mypost/mypost.wxss */
+.line{
+width:100%;
+height:2rpx;
+background:rgb(202, 201, 201);
+}

@@ -1,0 +1,139 @@
+<view class='tip'>提示：请确保发布信息真实完整，这有利于您的商品被更多人检索到。</view>
+
+<van-cell-group>
+  <van-field required clearable value="{{ value }}" placeholder="标题 品类品牌型号 " border="{{ false }}" bind:change="bindcontent" />
+</van-cell-group>
+<view class='hr1'></view>
+<van-cell-group>
+  <van-field input-class='text-content' value="{{ value }}" placeholder="详细描述、转手原因" required clearable border="{{ false }}" bind:change="binddes"/>
+</van-cell-group>
+ 
+<scroll-view class="image-group" scroll-x="true">
+  <block wx:for='{{images}}' wx:for-index='idx'>
+    <view>
+      <image src='{{images[idx]}}' mode='aspectFill' bindtap="previewImg"></image>
+      <icon type='clear' bindtap='removeImg' data-index="{{idx}}"></icon>
+    </view>
+  </block>
+</scroll-view>
+<image src='{{camera}}' style='width:70px;height:70px;' bindtap='chooseImage'></image>
+<view class='line'></view>
+<van-tabs bind:click="onClick">
+  <van-tab title="二手书籍">
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label2">标签:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindMenuChange" value="{{menuIndex}}" range="{{menu}}">
+          <view class="weui-select weui-select_in-select-after">{{menu[menuIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label2">成色:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindqualityChange" value="{{qualityIndex}}" range="{{quality}}">
+          <view class="weui-select weui-select_in-select-after">{{quality[qualityIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label2">校区:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindCampusChange" value="{{campusIndex}}" range="{{campus}}">
+          <view class="weui-select weui-select_in-select-after">{{campus[campusIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label2">微信号：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入您的微信号码" value='{{wxNumber}}'  bindchange="bindwxNumber" type="digit" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label2">电话号:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindchange="bindphoneNumber" placeholder="请输入您的电话号码" value='{{phoneNumber}}'  type="digit" />
+      </view>
+    </view>
+    <view class='hr'></view>
+  </van-tab>
+
+
+  <van-tab title="二手旧物"> 
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label2">标签:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindlistChange" value="{{listIndex}}" range="{{list}}">
+          <view class="weui-select weui-select_in-select-after">{{list[listIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label2">成色:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindConditionChange" value="{{conditionIndex}}" range="{{conditions}}">
+          <view class="weui-select weui-select_in-select-after">{{conditions[conditionIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label2">校区:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindCampusChange" value="{{campusIndex}}" range="{{campus}}">
+          <view class="weui-select weui-select_in-select-after">{{campus[campusIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label2">微信号：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入您的微信号码" value='{{wxNumber}}'  bindchange="bindwxNumber" type="digit" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label2">电话号:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindchange="bindphoneNumber" placeholder="请输入您的电话号码" value='{{phoneNumber}}'  type="digit" />
+      </view>
+    </view>
+    <view class='hr'></view>
+  </van-tab>
+</van-tabs>
+<view class='add_btn'>
+  <button class='btn' bindtap='formSubmit' >
+    确认发布
+  </button>
+</view>

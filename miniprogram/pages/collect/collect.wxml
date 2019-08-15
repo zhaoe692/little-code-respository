@@ -1,0 +1,44 @@
+<block wx:for='{{topic}}' wx:for-index="idx">
+      <view class='container' bindtap='onItemClick' data-id='{{item._id}}'>
+          <view class='container-content'>
+            <view class='user-info'>
+              <image class='user-head' src='{{item.infoavatarUrl}}' mode='aspectFill'></image>
+              <view class='user-name-time'>
+                <view class='user-name'>{{item.infonickname}}</view>
+                <view class='user-publish-time'>{{item.infodate}}</view>
+              </view>
+            </view>
+            <view class='content'>
+              <!-- 显示文本 -->
+             <block wx:if="{{item.content != ''}} && {{item.images.length > 0}}">
+            <text class='content-text'>{{item.infocontent}}</text>
+            <scroll-view class='content-scroll' scroll-x='true'>
+              <block wx:for="{{item.infoimages}}">
+                <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+              </block>
+            </scroll-view>
+               <view class='content-menu'>
+                <text class='content-text2'>#{{item.infomenu}}</text>
+                <text style='font-size:4vw;margin-left:35vw;'>浏览 | {{item.index}}人</text>
+              </view>
+              </block>
+              <!-- 显示图片 -->
+              <block wx:elif="{{item.images.length > 0}}">
+                <scroll-view class='content-scroll' scroll-x='true'>
+                  <block wx:for="{{item.images}}">
+                    <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+                  </block>
+                </scroll-view>
+               
+              </block>
+
+              <!-- 显示文本 -->
+              <block wx:else>
+                <text class='content-text'>{{item.content}}</text>
+              </block>
+            </view>
+          </view>
+
+          <view class='container-line'></view>
+        </view>
+      </block>

@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/scanbook/scanbook",
+    "pages/mycenter/mycenter",
+    "pages/mypost/mypost",
+    "pages/post/post",
+    "pages/onsearch/onsearch",
+    "pages/detail/detail",
+    "pages/history/history",
+    "pages/collect/collect"
+  ],
+  "window": {
+    "backgroundColor": "#1e68c9",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1e68c9",
+    "navigationBarTitleText": "长工大转转交易平台",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

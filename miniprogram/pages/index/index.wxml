@@ -1,0 +1,286 @@
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<view hidden="{{currentTab!==0}}">
+
+  <view class='search'>
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+      <view slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
+  </view>
+
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <van-notice-bar left-icon="" text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。" />
+
+  <van-tabs bind:click="onClick">
+    <van-tab title="最新信息">
+
+      <block wx:for='{{topics}}' wx:for-index="idx">
+        <view class='container' bindtap='onItemClick' data-id='{{item._id}}'>
+          <view class='container-content'>
+            <view class='user-info'>
+              <image class='user-head' src='{{item.userInfo.avatarUrl}}' mode='aspectFill'></image>
+              <view class='user-name-time'>
+                <view class='user-name'>{{item.userInfo.nickName}}</view>
+                <view class='user-publish-time'>{{item.date}}</view>
+              </view>
+            </view>
+            <view class='content'>
+              <!-- 显示文本 -->
+             <block wx:if="{{item.content != ''}} && {{item.images.length > 0}}">
+            <text class='content-text'>{{item.content}}</text>
+            <scroll-view class='content-scroll' scroll-x='true'>
+              <block wx:for="{{item.images}}">
+                <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+              </block>
+            </scroll-view>
+               <view class='content-menu'>
+                <text class='content-text2'>#{{item.menu}}</text>
+                <text style='font-size:4vw;margin-left:30vw;'>浏览 | {{item.index}}人</text>
+              </view>
+              </block>
+              <!-- 显示图片 -->
+              <block wx:elif="{{item.images.length > 0}}">
+                <scroll-view class='content-scroll' scroll-x='true'>
+                  <block wx:for="{{item.images}}">
+                    <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+                  </block>
+                </scroll-view>
+               
+              </block>
+
+              <!-- 显示文本 -->
+              <block wx:else>
+                <text class='content-text'>{{item.content}}</text>
+              </block>
+            </view>
+          </view>
+
+          <view class='container-line'></view>
+        </view>
+      </block>
+    </van-tab>
+    <van-tab title="免费专区">内容 2</van-tab>
+  </van-tabs>
+
+</view>
+<!--旧书-->
+<view hidden="{{currentTab!==1}}" style='margin-top: 5%;'>
+
+  <block wx:for='{{book_list}}' wx:for-index="idx">
+      <view class='container' bindtap='onItemClick' data-id='{{item._id}}'>
+          <view class='container-content'>
+            <view class='user-info'>
+              <image class='user-head' src='{{item.userInfo.avatarUrl}}' mode='aspectFill'></image>
+              <view class='user-name-time'>
+                <view class='user-name'>{{item.userInfo.nickName}}</view>
+                <view class='user-publish-time'>{{item.date}}</view>
+              </view>
+            </view>
+            <view class='content'>
+              <!-- 显示文本 -->
+             <block wx:if="{{item.content != ''}} && {{item.images.length > 0}}">
+            <text class='content-text'>{{item.content}}</text>
+            <scroll-view class='content-scroll' scroll-x='true'>
+              <block wx:for="{{item.images}}">
+                <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+              </block>
+            </scroll-view>
+               <view class='content-menu'>
+                <text class='content-text2'>#{{item.menu}}</text>
+                <text style='font-size:4vw;margin-left:30vw;'>浏览 | {{item.index}}人</text>
+              </view>
+              </block>
+              <!-- 显示图片 -->
+              <block wx:elif="{{item.images.length > 0}}">
+                <scroll-view class='content-scroll' scroll-x='true'>
+                  <block wx:for="{{item.images}}">
+                    <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+                  </block>
+                </scroll-view>
+               
+              </block>
+
+              <!-- 显示文本 -->
+              <block wx:else>
+                <text class='content-text'>{{item.content}}</text>
+              </block>
+            </view>
+          </view>
+
+          <view class='container-line'></view>
+        </view>
+      </block>
+</view>
+<!--发布-->
+<view hidden="{{currentTab!==2}}">
+<button bindtap='postbook' style=' margin-top: 50px;'>Book</button>
+
+<view class='post_function' bindtap='bindtest'>
+<image src='/images/shouye/1-1.png'></image>
+
+<view bindtap='scanCode'>
+<image src='/images/shouye/1-2.png' ></image>
+</view>
+
+<image src='/images/shouye/1-3.png'></image>
+</view>
+<view class='post_functions'>
+<image src='/images/shouye/2-1.png' style='width:30vw;heigth:20vh;'></image>
+</view>
+
+
+</view>
+<!--旧物-->
+<view hidden="{{currentTab!==3}}" style='margin-top: 5%;'>
+
+  <block wx:for='{{good_list}}' wx:for-index="idx">
+      <view class='container' bindtap='onItemClick' data-id='{{item._id}}'>
+          <view class='container-content'>
+            <view class='user-info'>
+              <image class='user-head' src='{{item.userInfo.avatarUrl}}' mode='aspectFill'></image>
+              <view class='user-name-time'>
+                <view class='user-name'>{{item.userInfo.nickName}}</view>
+                <view class='user-publish-time'>{{item.date}}</view>
+              </view>
+            </view>
+            <view class='content'>
+              <!-- 显示文本 -->
+             <block wx:if="{{item.content != ''}} && {{item.images.length > 0}}">
+            <text class='content-text'>{{item.content}}</text>
+            <scroll-view class='content-scroll' scroll-x='true'>
+              <block wx:for="{{item.images}}">
+                <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+              </block>
+            </scroll-view>
+               <view class='content-menu'>
+                <text class='content-text2'>#{{item.menu}}</text>
+                <text style='font-size:4vw;margin-left:30vw;'>浏览 | {{item.index}}人</text>
+              </view>
+              </block>
+              <!-- 显示图片 -->
+              <block wx:elif="{{item.images.length > 0}}">
+                <scroll-view class='content-scroll' scroll-x='true'>
+                  <block wx:for="{{item.images}}">
+                    <image class='content-img' src='{{item}}' mode='aspectFill'></image>
+                  </block>
+                </scroll-view>
+               
+              </block>
+
+              <!-- 显示文本 -->
+              <block wx:else>
+                <text class='content-text'>{{item.content}}</text>
+              </block>
+            </view>
+          </view>
+
+          <view class='container-line'></view>
+        </view>
+      </block>
+</view>
+<!--我的-->
+<view hidden="{{currentTab!==4}}">
+<!-- <van-tabs bind:click="">
+  <van-tab title="发布历史" >
+  内容 1
+  </van-tab>
+  <van-tab title="收藏列表" >内容 2</van-tab>
+</van-tabs>  -->
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+    <text class="userinfo-nickname" lang="zh_CN">{{userInfo.nickName}}</text>
+  </view>
+<!-- 底部列表 -->
+<view class='content1'>
+<view class='line1'></view>
+<!-- 收藏列表 -->
+  <view class='item1' bindtap='towards_center'>
+    <view class='icon1'>
+      <image src='/images/me/mine2.png' style="width:30px;height:31px;"></image>
+    </view>
+    <view class='itemName1'>
+      <view>我的认证</view>
+    </view>
+     <view class='right1'>></view>
+  </view>
+   <view class='hr1'></view>
+ <!-- 发布历史 -->
+  <view class='item1'  bindtap='towards_mypost'>
+    <view class='icon1'>
+      <image src='/images/me/history.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName1'>
+      <view>我发布的</view>
+    </view>
+    <view class='right1'>></view>
+  </view>
+  <view class='hr1'></view>
+  <!-- 求购列表 -->
+  <view class='item1'>
+    <view class='icon1'>
+      <image src='/images/me/ttt.png' style="width:35px;height:36px;"></image>
+    </view>
+    <view class='itemName1'>
+      <view>我求购的</view>
+    </view>
+     <view class='right1'>></view>
+  </view>
+   <view class='hr1'></view>
+ <!-- 收藏列表 -->
+  <view class='item1' bindtap='towards_collect'>
+    <view class='icon1'>
+      <image src='/images/me/collect.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName1'>
+      <view>我收藏的</view>
+    </view>
+      <view class='right1'>></view>
+  </view>
+   <view class='hr1'></view>
+  <!-- 免费列表 -->
+  <view class='item1'>
+    <view class='icon1'>
+      <image src='/images/me/shop.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName1'>
+      <view>我参与的免费送</view>
+    </view>
+     <view class='right1'>></view>
+  </view>
+  <!-- 邀请好友 -->
+   <view class='line1'></view>
+  <view class='item1'>
+    <view class='icon1'>
+      <image src='/images/me/invitate.png' style="width:40px;height:41px;"></image>
+    </view>
+    <view class='itemName1'>
+      <view>邀请好友</view>
+    </view>
+    <view class='right1' >
+      <text class='opr1'>一起来玩~</text>></view>
+  </view>
+  <view class='hr1'></view>
+  <!-- 产品意见 -->
+  <view class='item1' >
+    <view class='icon1'>
+      <image src='/images/me/advice.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName1'>
+      <view>产品意见</view>
+    </view>
+    <view class='right1'>></view>
+  </view>
+  <view class='hr1'></view>
+
+</view>
+</view>

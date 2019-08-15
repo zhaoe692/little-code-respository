@@ -1,0 +1,253 @@
+/*标签 加轮播图*/
+
+.navbar {
+  flex: none;
+  display: flex;
+  background: #1e68c9;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.navbar .item {
+  font-style: normal;
+  font-size: 35rpx;
+  font-family: "KaiTi";
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+
+.navbar .item.active {
+  color: rgb(23, 212, 149);
+}
+
+.navbar .item.active:after {
+  font-style: normal;
+  font-size: 35rpx;
+  font-family: "KaiTi";
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+
+.search {
+  margin-top: 6%;
+}
+
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+
+.swiper-image {
+  height: 100%;
+  width: 100%;
+}
+
+.slide-image {
+  height: 100%;
+  width: 100%;
+}
+
+/*旧书*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1vh 4vw 1vh 4vw;
+  margin: 0 auto;
+}
+
+.container-line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.user-head {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.user-name-time {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  margin-left: 10px;
+}
+
+.user-name {
+  font-size: 5vw;
+  width: 15vw;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-publish-time {
+  margin-left: 15vw;
+  font-size: 4vw;
+  color: #999;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5vw;
+}
+
+.content-scroll {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.content-text {
+  font-size: 4vw;
+  color: #666;
+  margin-left: 10vw;
+}
+
+.content-img {
+  width: 100px;
+  height: 100px;
+  margin-left: 10vw;
+  margin-top: 1vh;
+  background-color: #999;
+}
+
+.content-menu {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  margin-left: 10px;
+}
+
+.content-text2 {
+  font-size: 4vw;
+  color: blue;
+  margin-left: 10vw;
+}
+
+/*我的*/
+
+.userinfo {
+  margin-top: 38rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #1e68c9;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.userinfo-avatar:after {
+  border: none;
+}
+
+.userinfo-nickname {
+  font-size: 32rpx;
+  color: white;
+  background-size: cover;
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+.content1 {
+  background-color: #f4f4f4;
+  height: 500px;
+}
+
+.item1 {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 50px;
+  align-items: center;
+}
+
+.icon1 {
+  width: 50px;
+  text-align: center;
+}
+
+.itemName1 {
+  width: 40%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.line1 {
+  height: 10px;
+}
+
+.hr1 {
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.2;
+}
+
+.right1 {
+  width: 40%;
+  text-align: right;
+}
+
+/*发布*/
+
+.post_function {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+}
+
+.post_function image {
+  width: 45vw;
+  height: 10vh;
+}
+.post_functions{
+display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+   width: 25vw;
+  height: 10vh;
+
+}

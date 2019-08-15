@@ -1,0 +1,28 @@
+<!-- 搜索框 -->
+<van-search 
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:search="onSearch"
+>
+  <view slot="action" bind:tap="onSearch">搜索</view>
+</van-search>
+<view class='contain'>
+<text class='font'>大家都在搜</text>
+<view class='btton'>
+<van-button plain type="default" size="small" >旅行</van-button>
+<van-button plain type="default" size="small" >羽毛球拍</van-button>
+<van-button plain type="default" size="small" >小桌子</van-button>
+<van-button plain type="default" size="small" >背水带</van-button>
+<!-- <button >ceshi</button>
+<button >ceshi2</button>
+<button >ceshi3</button> -->
+</view>
+<view class='btton'>
+<van-button plain type="default" size="small" >绝地求生</van-button>
+<van-button plain type="default" size="small" >泰国剑桥 包</van-button>
+</view>
+<view class='btton'>
+<van-button plain type="default" size="small" >HonerX7</van-button>
+</view>
+</view>
